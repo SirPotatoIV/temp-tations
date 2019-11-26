@@ -4,12 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link rel="stylesheet" href="../pikachu-posse/Assets/CSS/bulma.css">
     <link rel="stylesheet" href="../pikachu-posse/Assets/CSS/style.css">
     <title>Temp-Tations</title>
 </head>
 <body>
-        <section class="hero is-info is-medium">
+        <nav class="navbar" role="navigation">
+        <div class="navbar-menu">
+                <div class="navbar-start">
+                        <span class="icon is-large is-left">
+                                <i class="fas fa-cloud-sun"></i>
+                </div>
+                <div class="navbar-end">
+                    <span class="icon is-large is-left">
+                        <p class="current-temp" id="current-temp">72º</p>
+                </div>
+              </div>
+        </nav>
+
+        <section class="hero is-info is-bold is-medium">
             <div class="hero-body">
                 <div class="container">
                     <h1 class="title">
@@ -18,10 +32,15 @@
                     <h2 class="subtitle">
                       Search by a main ingredient, or dietary restriction.
                     </h2>
-                    <p class="control has-icons-left">
-                    <input id="user-search" class="input is-medium search-box"></input>
-                    <div class="row dietRestrictions">
-                    </p>
+                    <div class="row">
+                            <p class="control has-icons-left">
+                              <input id="user-search" class="input" type="search" placeholder="Search">
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-utensils"></i>
+                                </span>
+                              <button id="search-button" class="search-button button"><i class="fas fa-search"></i></button>
+                            </p>
+                    </div>
                         <label class="checkbox">
                             <input type="checkbox">
                             Gluten-Free
@@ -39,7 +58,6 @@
                                         Vegetarian
                                       </label>
                     </div>
-
 
                 </div>
 
@@ -92,6 +110,6 @@
                 </div>
             
         </section>
-<script src="lodash.js"></script>
+
 </body>
 </html>
