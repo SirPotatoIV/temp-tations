@@ -10,7 +10,7 @@
     <title>Temp-Tations</title>
 </head>
 <body>
-        <nav class="navbar" role="navigation">
+        <!-- <nav class="navbar" role="navigation">
         <div class="navbar-menu">
                 <div class="navbar-start">
                         <span class="icon is-large is-left">
@@ -21,7 +21,7 @@
                         <p class="current-temp" id="current-temp">72º</p>
                 </div>
               </div>
-        </nav>
+        </nav> -->
 
         <section class="hero is-info is-bold is-medium">
             <div class="hero-body">
@@ -32,14 +32,23 @@
                     <h2 class="subtitle">
                       Search by a main ingredient, or dietary restriction.
                     </h2>
+                    
                     <div class="row">
                             <p class="control has-icons-left">
-                              <input id="user-search" class="input" type="search" placeholder="Search">
+                                    <input id="user-location" class="input" type="search" placeholder="Search Zip Code">
+                                      <span class="icon is-small is-left">
+                                            <i class="fas fa-cloud-meatball"></i>
+                                      </span>
+                                  </p>
+                            <br>
+                            <p class="control has-icons-left">
+                              <input id="user-search" class="input" type="search" placeholder="Search Main Ingredient">
                                 <span class="icon is-small is-left">
                                     <i class="fas fa-utensils"></i>
                                 </span>
-                              <button id="search-button" class="search-button button"><i class="fas fa-search"></i></button>
                             </p>
+                            <br>
+                        <button id="search-button" class="search-button button"><i class="fas fa-search"></i></button>
                     </div>
                         <label class="checkbox">
                             <input type="checkbox">
@@ -52,11 +61,11 @@
                               <label class="checkbox">
                                     <input type="checkbox">
                                     Vegan
-                                  </label>
-                                  <label class="checkbox">
+                               </label>
+                                <label class="checkbox">
                                         <input type="checkbox">
                                         Vegetarian
-                                      </label>
+                                </label>
                     </div>
                 </div>
 
