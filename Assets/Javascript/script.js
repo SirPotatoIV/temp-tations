@@ -39,19 +39,36 @@ function getRecipes() {
     const appKey = "87537f8acf10951583c43ab5434ae1d5";
 	// Created to store users main ingredient
 	// -- UserInput currently set to taco. In future updates the input will come from the html elements.
-	const mainIngredient = "taco";
+	const mainIngredient = "bell pepper";
 	// Created to store all dietary restrictions the user has selected
-	const dietaryRescritions = [];
-	// Created to store the keywords choosen by us based on the temperature at the zip code the user provided.
-	const recipekeywords = [];
+	// -- The food api categorizes these as health labels
+	// -- Multiple health labels can be applied
+	const dietaryRescritions = ["vegetarian", "peanut-free"];
+	// Created to store our custom parameters choosen based on the temperature at the zip code the user provided.
+	const recipeKeywords = ["sandwich", "grilled"];
+	let query = mainIngredient;
+	
+	// if keywords were included, adds them to the get request. Else, query is equal to mainIngredient
+	if (recipeKeywords){
+		for(let i=0; i < recipeKeywords.length; i++){
+			query = query+" "+recipeKeywords[i];
+		}
+	}
 	// Creates URL for get request to the food API edamam
 	// -- combines app id, app key, main ingredient, dietary, and keywords  
-	const edamamURL = "https://api.edamam.com/search?q="+mainIngredient+"&app_id="+appId+"&app_key="+appKey;
+	let edamamURL = "https://api.edamam.com/search?q="+query+"&app_id="+appId+"&app_key="+appKey;
+	
+	// If dietary rescritions were selected, adds them to the get request
+	if(dietaryRescritions){
+		for(let i=0; i < dietaryRescritions.length; i++){
+			edamamURL = edamamURL +"&health=" + dietaryRescritions[i];
+		}
+	}
 	
 	// Get request to food api
     axios.get(edamamURL).then(function(response){
-        // console.log(edamamURL);
-		// console.log(response);
+        console.log(edamamURL);
+		console.log(response);
 		
     })
 }
