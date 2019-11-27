@@ -50,8 +50,8 @@
                             <br>
                         <button id="search-button" class="search-button button"><i class="fas fa-search"></i></button>
                     </div>
-                        <label class="checkbox">
-                            <input type="checkbox">
+                        <label >
+                            <input class="checkbox" type="checkbox">
                             Gluten-Free
                           </label>
                           <label class="checkbox">
@@ -72,52 +72,93 @@
             </div>
         </section>
 
-        <section class="section">
+
+        <section class="section choices-section">
             <div class="container">
+      <!-- bulma tiles work with a family ancestor/parent/children system -->
                 <div class="tile is-ancestor">
                     <div class="tile is-parent">
                         <article class="tile is-child box">
                         <p class="title">Recipe 1</p>
-                        <p class="subtitle">Ingredients</p>
+                        <p class="subtitle1">Servings:______ Prep Time:______</p>
                         </article>
                     </div>
                     <div class="tile is-parent">
                         <article class="tile is-child box">
                         <p class="title">Recipe 2</p>
-                        <p class="subtitle">Ingredients</p>
+                        <p class="subtitle2">Servings:______ Prep Time:______</p>
                         </article>
                     </div>
                     <div class="tile is-parent">
                         <article class="tile is-child box">
                         <p class="title">Recipe 3</p>
-                        <p class="subtitle">Ingredients</p>
+                        <p class="subtitle3">Servings:______ Prep Time:______</p>
                         </div>
                         </article>
                 </div>
-
                   <div class="tile is-ancestor">
                         <div class="tile is-parent">
                           <article class="tile is-child box">
                             <p class="title">Recipe 4</p>
-                            <p class="subtitle">Ingredients</p>
+                            <p class="subtitle4">Servings:______ Prep Time:______</p>
                           </article>
                         </div>
                         <div class="tile is-parent">
                           <article class="tile is-child box">
                             <p class="title">Recipe 5</p>
-                            <p class="subtitle">Ingredients</p>
+                            <p class="subtitle5">Servings:______ Prep Time:______</p>
                           </article>
                         </div>
                         <div class="tile is-parent">
                           <article class="tile is-child box">
                             <p class="title">Recipe 6</p>
-                            <p class="subtitle">Ingredients</p>
+                            <p class="subtitle6">Servings:______ Prep Time:______</p>
                             </div>
                           </article>
                     </div>
                 </div>
-            
         </section>
+
+
+<!-- This will all be hidden at the start, and then populate after the user clicks on a recipe -->
+<section class="section recipe-section d-none">
+  <div class="container">
+    <div class="tile is-ancestor">
+        <div class="tile is-4 is-vertical is-parent">
+          <div class="tile is-child box">
+              <p class="title">Recipe Title</p>
+              <p>Prep-Time:    Cook Time:     Serves:</p>
+              <p>A little anectode about my family and how kooky we are.</p>
+          </div>
+          <div class="tile is-child box">
+            <p class="title">Ingredients</p>
+            <ul class="ingredients-list">
+                <li> 1 cup </li>
+                <li> 2.5oz  </li>
+                <li> 5lbs </li>
+                <li> 3tbsp </li>
+            </ul>
+          </div>
+        </div>
+        <div class="tile is-parent">
+          <div class="tile is-child box">
+            <p class="title">Instructions</p>
+            <ol class="instruction-list ">
+              <li>Aquire PBJ Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, in laboriosam quibusdam, veniam, non iste illum sapiente praesentium repudiandae harum nobis maiores eligendi nemo dolores voluptatum rerum? Tempora, omnis sunt!</li>
+              <li> Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis est iste dolore laudantium mollitia quis. Esse dolorum commodi beatae. Aspernatur ab dolorem cupiditate eligendi culpa incidunt repellendus aliquam unde quasi.</li>
+              <li> Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium voluptates fugit sed doloremque! Beatae delectus, obcaecati quas tempora iure voluptatem reiciendis fugit similique, sit modi quibusdam nisi placeat reprehenderit repellat.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+  </div>
+</section>
+
+
+
+
+
+
 <script src="lodash.js"></script>
 
 
