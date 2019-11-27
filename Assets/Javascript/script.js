@@ -16,9 +16,29 @@
  // Function 
  // user ingredient input
 
+// ------------------------------------------------------------------------------------------------------------
+// array of search terms for 3 temperature sections
+ const hotWeatherFoods = ["grilled","fresh","salad","pasta salad", "cold", "fruit", "garden","summer"];
+ const medWeatherFoods = ["sandwhich","burger","pizza","breakfast","flatbread","snack"];
+ const coldWeatherFoods = ["roasted", "baked", "soup", "stew","casserole","hot dish", "chili", "warm"]
+
+	// if (currentTemp < 39) then search coldWeatherFoods + user search
+	// if (40 < currentTemp < 69) then search medWeatherFoods + user search
+	// if (currentTemp > 70) then search hotWeatherFoods + user search
+
+// ------------------------------------------------------------------------------------------------------------
+
+
  axios.get("https://api.weatherbit.io/v2.0/subscription/usage?key=05658cc7a88941a9b5ad8ea87ffcaf89")
  .then(function(response){
 
     console.log(response)
  })
- // 
+ 
+  const searchButton = document.getElementById("search-button")
+  searchButton.addEventListener("click", function(){
+	console.log("buttonclick")
+});
+
+
+ 
