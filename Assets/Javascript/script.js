@@ -85,38 +85,70 @@ function recipeFinder(){
 	// Will also display the recipe summaries in tiles.
 	function organizeRecipeData(foodResponse){
 		const recipes = foodResponse.data.hits
-		const numRecipesToDisplay = 6;
+		// Currently set to three for testing purposes. Eventually will be switched to 6. - JO
+		const numRecipesToDisplay = 1;
 		// console.log('unsorted recipes and sorted Recipes: ', unsortedRecipes, sortedRecipes);
+		
 		// For loop used to display recipe tiles.
 		for(let i = 0; i <= numRecipesToDisplay; i++){
 		// -- reference a single recipe in the variable sortedRecipes
 		const singleRecipe = recipes[i].recipe;
-		console.log(singleRecipe);
+		// console.log(singleRecipe);
 		// -- store the values of the recipe title, servings, and prep time
-		const recipeName = singleRecipe.label;
+		const recipeTitle = singleRecipe.label;
 		const recipeServings = singleRecipe.yield || "Not Found";
-		const prepAndcookTime = singleRecipe.totalTime || "Not Found";
-		console.log(recipeName, recipeServings, prepAndcookTime);
+		const prepAndCookTime = singleRecipe.totalTime || "Not Found";
+		// created to create unique id names to reference ids in generated html
+		const summaryTileEls = [];
+		// creates the unique id every iternation of the loop
+		summaryTileEls[i] = {
+			title: "title"+i,
+			servingsAndtime: "servingsAndtime"+i
+		}
+		// console.log(summaryTileEls);
+		// console.log(recipeName, recipeServings, prepAndcookTime);
 		// -- create the tile using innerHTML
 		// -- -- create unique ids for each element that will be used to display the title, servings, and prep time
-		// if(isSecondChildTile){
-
-		// }
-		// else{
-			const parentSummaryTile = document.createElement('div');
-			parentSummaryTile.setAttribute('class', 'tile is-parent');
-			const childSummaryTile = document.createElement('div');
-			childSummaryTile.setAttribute('class','tile is-child box');
-			console.log(parentSummaryTile, childSummaryTile)
+		const choiceDisplay = document.getElementById('choice-display');
+		choiceDisplay.innerHTML = "";
+		// if(parentTile === 1){
 
 		// }
 
+		// if(parentTile === 2){
 
+		// }
+		// if(parentTile === 3){
+
+		// }
+		
+			const ancestorSummaryTile = document.createElement('div');
+			ancestorSummaryTile.setAttribute('class', 'tile is-ancestor');
+			const parentSummaryTile = document.createElement('parent');
+			parentSummaryTile.setAttribute('class','tile is-parent box');
+			// console.log(parentSummaryTile, childSummaryTile)
+			parentSummaryTile.innerHTML = `
+			<article class="tile is-child box">
+                <p id="title`+i+`" class="title">Title Goes Here</p>
+                <p id="servingsAndtime`+i+`" class="subtitle`+(i+1)+`">Servings and Total Time</p>
+			</article>`;
+			// appends parent div to ancestor div	
+			ancestorSummaryTile.append(parentSummaryTile);
+			// appends ancestor div to choice display div
+			choiceDisplay.append(ancestorSummaryTile);
+			// updates the recipe summary tile title
+			const titleElId = summaryTileEls[i].title;
+			document.getElementById(titleElId).innerText = recipeTitle;
+			// updates the recipe summmary tile servings and total time
+			const servingsAndtimeElId = summaryTileEls[i].servingsAndtime;
+			document.getElementById(servingsAndtimeElId).innerText = "Total Time: ("+prepAndCookTime+") Servings: ("+recipeServings+")";
+			
 		// -- append tile to the element with id choice display
 		// -- -- need to get element first and delete the inner html.
 		// -- change the innerText of the generated HTML to display the recipe title, servings, and prep time
 		// -- continue loop until all 6 recipes are displayed
 		}
+		
 
 	}
 }
