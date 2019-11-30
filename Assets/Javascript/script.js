@@ -85,7 +85,18 @@ function recipeFinder(){
 	function organizeRecipeData(foodResponse){
 		const unsortedRecipes = foodResponse.data.hits
 		const sortedRecipes = [];
-		console.log('unsorted recipes and sorted Recipes: ', unsortedRecipes, sortedRecipes);
+		const numRecipesToDisplay = 6;
+		// console.log('unsorted recipes and sorted Recipes: ', unsortedRecipes, sortedRecipes);
+		// For loop used to display recipe tiles.
+		// -- reference a single recipe in the variable sortedRecipes
+		// -- store the values of the recipe title, servings, and prep time
+		// -- create the tile using innerHTML
+		// -- -- create unique ids for each element that will be used to display the title, servings, and prep time
+		// -- append tile to the element with id choice display
+		// -- -- need to get element first and delete the inner html.
+		// -- change the innerText of the generated HTML to display the recipe title, servings, and prep time
+		// -- continue loop until all 6 recipes are displayed
+
 
 	}
 }
