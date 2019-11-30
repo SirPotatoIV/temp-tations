@@ -81,22 +81,42 @@ function recipeFinder(){
 	// Currently the function gets called once the page is loaded, but in future updates the function will be called once the user clicks search
 	getRecipes();
 	
-	// Function will be used to take the reponse from the food API and organize the data so it is usuable
+	// Function will be used to take the reponse from the food API and organize the data so it is usuable.
+	// Will also display the recipe summaries in tiles.
 	function organizeRecipeData(foodResponse){
-		const unsortedRecipes = foodResponse.data.hits
-		const sortedRecipes = [];
+		const recipes = foodResponse.data.hits
 		const numRecipesToDisplay = 6;
 		// console.log('unsorted recipes and sorted Recipes: ', unsortedRecipes, sortedRecipes);
 		// For loop used to display recipe tiles.
+		for(let i = 0; i <= numRecipesToDisplay; i++){
 		// -- reference a single recipe in the variable sortedRecipes
+		const singleRecipe = recipes[i].recipe;
+		console.log(singleRecipe);
 		// -- store the values of the recipe title, servings, and prep time
+		const recipeName = singleRecipe.label;
+		const recipeServings = singleRecipe.yield || "Not Found";
+		const prepAndcookTime = singleRecipe.totalTime || "Not Found";
+		console.log(recipeName, recipeServings, prepAndcookTime);
 		// -- create the tile using innerHTML
 		// -- -- create unique ids for each element that will be used to display the title, servings, and prep time
+		// if(isSecondChildTile){
+
+		// }
+		// else{
+			const parentSummaryTile = document.createElement('div');
+			parentSummaryTile.setAttribute('class', 'tile is-parent');
+			const childSummaryTile = document.createElement('div');
+			childSummaryTile.setAttribute('class','tile is-child box');
+			console.log(parentSummaryTile, childSummaryTile)
+
+		// }
+
+
 		// -- append tile to the element with id choice display
 		// -- -- need to get element first and delete the inner html.
 		// -- change the innerText of the generated HTML to display the recipe title, servings, and prep time
 		// -- continue loop until all 6 recipes are displayed
-
+		}
 
 	}
 }
