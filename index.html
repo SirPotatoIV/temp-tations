@@ -9,19 +9,22 @@
     <link rel="stylesheet" href="../pikachu-posse/Assets/CSS/style.css">
     <title>Temp-Tations</title>
 </head>
-<body>
-        <!-- <nav class="navbar" role="navigation">
-        <div class="navbar-menu">
-                <div class="navbar-start">
-                        <span class="icon is-large is-left">
-                                <i class="fas fa-cloud-sun"></i>
-                </div>
-                <div class="navbar-end">
-                    <span class="icon is-large is-left">
-                        <p class="current-temp" id="current-temp">72º</p>
-                </div>
-              </div>
-        </nav> -->
+<body class="has-navbar-fixed-top">
+
+  <div class="navbar-menu navbar is-transparent is-fixed-top">
+    <div class="navbar-start">
+      <div class="navbar-item">
+     <p id= "currentTemperature"> Current Temperature </p>
+    </div>
+    </div>
+  
+    <div class="navbar-end">
+        <div class="navbar-item">
+        <p id= "currentCity"> Your City </p>
+      </div>
+  </div>
+</div>
+
 
         <section class="hero is-info is-bold is-medium">
             <div class="hero-body">
@@ -35,11 +38,12 @@
                     
                     <div class="row">
                             <p class="control has-icons-left">
-                                    <input id="user-location" class="input" type="search" placeholder="Search Zip Code">
+                                    <input id="user-location" class="input" class = "zipcode" type="search" placeholder="Search Zip Code">
                                       <span class="icon is-small is-left">
                                             <i class="fas fa-cloud-meatball"></i>
                                       </span>
                                   </p>
+                                  <div id = "current-weather"></div>
                             <br>
                             <p class="control has-icons-left">
                               <input id="user-search" class="input" type="search" placeholder="Search Main Ingredient">
@@ -50,14 +54,7 @@
                             <br>
                         <button id="search-button" class="search-button button"><i class="fas fa-search"></i></button>
                     </div>
-                        <label class="checkbox" >
-                            <input type="checkbox" id="gluten-freeCheckBox">
-                            Gluten-Free
-                          </label>
-                          <label class="checkbox" >
-                                <input type="checkbox" id ="dairy-freeCheckBox" >
-                                Dairy-Free
-                              </label>
+                    <br>
                               <label class="checkbox" id="veganCheckBox">
                                     <input type="checkbox">
                                     Vegan
@@ -74,42 +71,42 @@
 
 
         <section class="section choices-section">
-            <div class="container">
+            <div id="choice-display" class="container">
       <!-- bulma tiles work with a family ancestor/parent/children system -->
                 <div class="tile is-ancestor">
-                    <div class="tile is-parent">
+                    <div id="parent1" class="tile is-parent">
                         <article class="tile is-child box">
-                        <p class="title">Recipe 1</p>
-                        <p class="subtitle1">Servings:______ Prep Time:______</p>
+                          <p class="title">Recipe 1</p>
+                          <p class="subtitle1">Servings:______ Prep Time:______</p>
                         </article>
                     </div>
-                    <div class="tile is-parent">
+                    <div id="parent2" class="tile is-parent">
                         <article class="tile is-child box">
-                        <p class="title">Recipe 2</p>
-                        <p class="subtitle2">Servings:______ Prep Time:______</p>
+                          <p class="title">Recipe 2</p>
+                          <p class="subtitle2">Servings:______ Prep Time:______</p>
                         </article>
                     </div>
-                    <div class="tile is-parent">
+                    <div id="parent3" class="tile is-parent">
                         <article class="tile is-child box">
-                        <p class="title">Recipe 3</p>
-                        <p class="subtitle3">Servings:______ Prep Time:______</p>
+                          <p class="title">Recipe 3</p>
+                          <p class="subtitle3">Servings:______ Prep Time:______</p>
                         </div>
                         </article>
                 </div>
                   <div class="tile is-ancestor">
-                        <div class="tile is-parent">
+                        <div id="parent4" class="tile is-parent">
                           <article class="tile is-child box">
                             <p class="title">Recipe 4</p>
                             <p class="subtitle4">Servings:______ Prep Time:______</p>
                           </article>
                         </div>
-                        <div class="tile is-parent">
+                        <div id="parent5" class="tile is-parent">
                           <article class="tile is-child box">
                             <p class="title">Recipe 5</p>
                             <p class="subtitle5">Servings:______ Prep Time:______</p>
                           </article>
                         </div>
-                        <div class="tile is-parent">
+                        <div id="parent6" class="tile is-parent">
                           <article class="tile is-child box">
                             <p class="title">Recipe 6</p>
                             <p class="subtitle6">Servings:______ Prep Time:______</p>
@@ -154,9 +151,13 @@
         </section>
 
  <!-- Scripts located below -->
+        <!-- Used to gain access to axios library -->
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <!-- Used to gain access to the lodash library -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.core.js"></script>
+        <!-- Temporarily storing a response from the food api to reduce total number of requests used -->
+        <script src="./Assets/Javascript/foodObject.js"></script>
+        <!-- Our javascript file -->
         <script src="./Assets/Javascript/script.js"></script>
-        <!-- <script src="./Assets/Javascript/edamam.js"></script>   -->
 </body>
 </html>
