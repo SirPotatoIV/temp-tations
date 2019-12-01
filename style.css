@@ -1,13 +1,32 @@
-.dietRestrictions{
-    padding-top: 15px;
-
+body{
+    background-color: salmon;
 }
 
-checkbox{
+.dietRestrictions{
     padding-top: 15px;
+}
+
+.checkbox{
+    padding-top: 15px;
+    height: 20px;
+    width: 20px;
+}
+
+.recipe-section{
+    background-color: salmon;
 
 }
 
 .current-temp{
     font-size: 42px;
+}
+
+.tile{
+    padding: 10px 10px;
+    background-color: salmon;
+}
+
+ol{
+margin: auto;
+padding: 25px 25px;
 }
