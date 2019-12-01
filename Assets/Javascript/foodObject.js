@@ -6,7 +6,7 @@
 // -- const dietaryRescritions = ["vegetarian", "peanut-free"];
 // -- const recipeKeywords = ["sandwich", "grilled"];
 
-{
+const foodObject = {
     "data": {
       "q": "bell pepper sandwich grilled",
       "from": 0,
