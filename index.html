@@ -9,19 +9,22 @@
     <link rel="stylesheet" href="../pikachu-posse/Assets/CSS/style.css">
     <title>Temp-Tations</title>
 </head>
-<body>
-        <!-- <nav class="navbar" role="navigation">
-        <div class="navbar-menu">
-                <div class="navbar-start">
-                        <span class="icon is-large is-left">
-                                <i class="fas fa-cloud-sun"></i>
-                </div>
-                <div class="navbar-end">
-                    <span class="icon is-large is-left">
-                        <p class="current-temp" id="current-temp">72º</p>
-                </div>
-              </div>
-        </nav> -->
+<body class="has-navbar-fixed-top">
+
+  <div class="navbar-menu navbar is-transparent is-fixed-top">
+    <div class="navbar-start">
+      <div class="navbar-item">
+     <p id= "currentTemperature"> Current Temperature </p>
+    </div>
+    </div>
+  
+    <div class="navbar-end">
+        <div class="navbar-item">
+        <p id= "currentCity"> Your City </p>
+      </div>
+  </div>
+</div>
+
 
         <section class="hero is-info is-bold is-medium">
             <div class="hero-body">
@@ -50,14 +53,7 @@
                             <br>
                         <button id="search-button" class="search-button button"><i class="fas fa-search"></i></button>
                     </div>
-                        <label class="checkbox" >
-                            <input type="checkbox" id="gluten-freeCheckBox">
-                            Gluten-Free
-                          </label>
-                          <label class="checkbox" >
-                                <input type="checkbox" id ="dairy-freeCheckBox" >
-                                Dairy-Free
-                              </label>
+                    <br>
                               <label class="checkbox" id="veganCheckBox">
                                     <input type="checkbox">
                                     Vegan
