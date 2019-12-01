@@ -26,6 +26,30 @@ function recipeFinder(){
 	const searchButton = document.getElementById("search-button")
 	searchButton.addEventListener("click", function(){
 		console.log("buttonclick")
+	
+		event.preventDefault();
+
+		const APIKey = "05658cc7a88941a9b5ad8ea87ffcaf89"
+	
+		const zipcodeInput = document.getElementById("user-location").value;
+		console.log(zipcodeInput);
+	
+		const queryURL = "https://api.weatherbit.io/v2.0/current?&postal_code=" + zipcodeInput + "&country=US&units=imperial&key=" + APIKey
+	
+		
+			axios.get(queryURL)
+				.then(function (response) {
+					
+					// transfer content to HTML
+					document.getElementById("current-weather").innerHTML = JSON.stringify(response);
+					console.log(response)
+	
+					document.getElementById("current-weather").innerHTML = "Temperature (F): " + response.data.data[0].temp;
+					console.log(response.data.data[0].temp)
+					document.getElementById("current-weather").innerHTML = "City: " + response.data.data[0].city_name;
+					console.log(response.data.data[0].city_name)
+				})
+	
 	});
 
 
