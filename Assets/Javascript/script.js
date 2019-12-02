@@ -41,12 +41,12 @@ function recipeFinder(){
 				.then(function (response) {
 					
 					// transfer content to HTML
-					document.getElementById("current-weather").innerHTML = JSON.stringify(response);
+					// document.getElementById("current-weather").innerHTML = JSON.stringify(response);
 					console.log(response)
 	
-					document.getElementById("current-weather").innerHTML = "Temperature (F): " + response.data.data[0].temp;
+					document.getElementById("currentTemperature").innerHTML = "Temperature (F): " + response.data.data[0].temp;
 					console.log(response.data.data[0].temp)
-					document.getElementById("current-weather").innerHTML = "City: " + response.data.data[0].city_name;
+					document.getElementById("currentCity").innerHTML = "City: " + response.data.data[0].city_name;
 					console.log(response.data.data[0].city_name)
 				})
 	
