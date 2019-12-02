@@ -33,6 +33,7 @@ function recipeFinder() {
 		console.log("buttonclick")
 
 		event.preventDefault();
+		storeUserInput()
 
 		const APIKey = "05658cc7a88941a9b5ad8ea87ffcaf89"
 
@@ -96,6 +97,19 @@ function recipeFinder() {
 			})
 
 	});
+
+	function storeUserInput(){
+		const mainIngredient = document.getElementById("user-search").value;
+		const vegetarianEl = document.querySelector("#vegetarianCheckBox");
+		const veganEl =  document.querySelector("#veganCheckBox");
+		const userInput = {
+			userIngredient: mainIngredient,
+			vegan: veganEl.checked,
+			vegetarian: vegetarianEl.checked
+		};
+		console.log("working",userInput);
+	}
+
 
 
 	// Function will be used to call the food api and get reciepes based on user input
@@ -234,34 +248,10 @@ function recipeFinder() {
 
 organizeRecipeData();
 
-function storeUserInput(){
 
-	const vegan =  document.querySelector("veganCheckBox");
-	vegan.addEventListener( 'change', function() {
-		if(this.checked) {
-			// Checkbox is checked..
-			dietaryRescritions.push("vegan")
-		} else {
-			// Checkbox is not checked..
-	
-		}
-	});
-	
-	const vegetarian = document.querySelector("vegetarianCheckBox");
-	vegetarian.addEventListener( 'change', function() {
-		if(this.checked) {
-			// Checkbox is checked..
-			dietaryRescritions.push("vegetarian")
-		} else {
-			// Checkbox is not checked..
-	
-		}
-	});
-	
-	const mainIngredient = UserInputEl.value;
-	const userInput = { mainIngredient, vegan, vegetarian,}
-	
-	}
+
+
+
 
 
 function populateRecipe(){
