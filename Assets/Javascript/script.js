@@ -225,12 +225,43 @@ function recipeFinder() {
 				document.getElementById(servingsAndtimeElId).innerText = "Total Time: ("+prepAndCookTime+") Servings: ("+recipeServings+")";
 				// -- continue loop until all 6 recipes are displayed
 		}
-
 		
 		return foodResponse;
 
 
 	}
+
+organizeRecipeData();
+
+function storeUserInput(){
+
+	const vegan =  document.querySelector("veganCheckBox");
+	vegan.addEventListener( 'change', function() {
+		if(this.checked) {
+			// Checkbox is checked..
+			dietaryRescritions.push("vegan")
+		} else {
+			// Checkbox is not checked..
+	
+		}
+	});
+	
+	const vegetarian = document.querySelector("vegetarianCheckBox");
+	vegetarian.addEventListener( 'change', function() {
+		if(this.checked) {
+			// Checkbox is checked..
+			dietaryRescritions.push("vegetarian")
+		} else {
+			// Checkbox is not checked..
+	
+		}
+	});
+	
+	const mainIngredient = UserInputEl.value;
+	const userInput = { mainIngredient, vegan, vegetarian,}
+	
+	}
+
 
 function populateRecipe(){
 	//onclicks on the recipe options
@@ -243,8 +274,9 @@ function populateRecipe(){
 		recipeCards[i].addEventListener("click", function(){
 		// change inner text of ingredient list to data set foodObject
 			console.log("click is working");
-			document.getElementById("ingredientsList").innerText = foodObject.data.hits.ingredientLines
-			// console.log(foodResponse.ingredientLines);
+			document.getElementById("ingredientsList").innerText = foodResponse.data.hits[i].recipe.ingredientLines+ "<lb>";
+			console.log(foodResponse.data.hits[i].recipe.ingredientLines);
+			console.log(i);
 
 	
 
@@ -257,9 +289,9 @@ function populateRecipe(){
 
 	}
 	organizeRecipeData();
-
+	populateRecipe ();
 }
-populateRecipe ();
+
 
 
 
