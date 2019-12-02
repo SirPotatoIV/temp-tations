@@ -17,6 +17,17 @@ function recipeFinder() {
 	// Function 
 	// user ingredient input
 
+	// axios.get("https://api.weatherbit.io/v2.0/subscription/usage?key=05658cc7a88941a9b5ad8ea87ffcaf89")
+	// .then(function(response){
+
+	// 	console.log(response)
+	// })
+	const ingredientList = document.getElementById("IngredientList");
+	
+	const summerFoods = ["summer", "grilled","pasta salad", "salad","cold","fresh"];
+	const springFoods = ["pizza", "sandwich", "breakfast", "brunch"];
+	const winterFoods = ["soup", "stew","casserole","chili", "warm","hot dish","roasted","baked"];
+
 	const searchButton = document.getElementById("search-button")
 	searchButton.addEventListener("click", function () {
 		console.log("buttonclick")
@@ -133,21 +144,23 @@ function recipeFinder() {
 		// })
 		const foodResponse = foodObject;
 		console.log('food Response created foodReponse:', foodResponse);
-		organizeRecipeData(foodResponse);
-
+		return foodResponse;
+		
 	}
 	// Currently the function gets called once the page is loaded, but in future updates the function will be called once the user clicks search
 	getRecipes();
 
 	// Function will be used to take the reponse from the food API and organize the data so it is usuable.
 	// Will also display the recipe summaries in tiles.
-	function organizeRecipeData(foodResponse) {
-		const recipes = foodResponse.data.hits
+	function organizeRecipeData(){
+		const foodResponse = getRecipes();
+		const recipes = foodResponse.data.hits;
 		// Currently set to three for testing purposes. Eventually will be switched to 6. - JO
 		const numRecipesToDisplay = 6;
 		// console.log('unsorted recipes and sorted Recipes: ', unsortedRecipes, sortedRecipes);
 
 		// For loop used to display recipe tiles.
+
 		for (let i = 1; i <= numRecipesToDisplay; i++) {
 			// -- reference a single recipe in the variable sortedRecipes
 			const singleRecipe = recipes[i].recipe;
@@ -181,11 +194,75 @@ function recipeFinder() {
 		}
 
 
+		for(let i = 1; i <= numRecipesToDisplay; i++){
+				// -- reference a single recipe in the variable sortedRecipes
+				const singleRecipe = recipes[i].recipe;
+				// -- store the values of the recipe title, servings, and prep time
+				const recipeTitle = singleRecipe.label;
+				const recipeServings = singleRecipe.yield || "Not Found";
+				const prepAndCookTime = singleRecipe.totalTime || "Not Found";
+				// created to create unique id names to reference ids in generated html
+				const summaryTileEls = [];
+				// creates the unique id every iternation of the loop
+				const parentSummaryTileId = "parent" + i;
+				summaryTileEls[i] = {
+					title: "title"+i,
+					servingsAndtime: "servingsAndtime"+i
+				}
+				// -- create the child tile using innerHTML
+				// -- -- create unique ids for each element that will be used to display the title, servings, and prep time
+				document.getElementById(parentSummaryTileId).innerHTML = `
+				<article class="tile is-child box">
+					<p id="title`+i+`" class="title">Title Goes Here</p>
+					<p id="servingsAndtime`+i+`" class="subtitle`+(i+1)+`">Servings and Total Time</p>
+				</article>`;
+				// Changes the innerText of the generated HTML to display the recipe title, servings, and prep time
+				// -- updates the recipe summary tile title
+				const titleElId = summaryTileEls[i].title;
+				document.getElementById(titleElId).innerText = recipeTitle;
+				// -- updates the recipe summmary tile servings and total time
+				const servingsAndtimeElId = summaryTileEls[i].servingsAndtime;
+				document.getElementById(servingsAndtimeElId).innerText = "Total Time: ("+prepAndCookTime+") Servings: ("+recipeServings+")";
+				// -- continue loop until all 6 recipes are displayed
+		}
+
+		
+		return foodResponse;
+
+
 	}
+
+function populateRecipe(){
+	//onclicks on the recipe options
+	const foodResponse = foodObject;
+	// const foodResponse = organizeRecipeData()
+	const recipeCards = document.querySelectorAll(".preview")
+	// need to set class of SHOW for the container.
+	console.log(recipeCards);
+	for (let i = 0; i < recipeCards.length; i++){
+		recipeCards[i].addEventListener("click", function(){
+		// change inner text of ingredient list to data set foodObject
+			console.log("click is working");
+			document.getElementById("ingredientsList").innerText = foodObject.data.hits.ingredientLines
+			// console.log(foodResponse.ingredientLines);
+
+	
+
+
+	})
+	// console.log(recipeCards);
+	//
+	}
+
+
+	}
+	organizeRecipeData();
+
 }
+populateRecipe ();
+
+
+
+
+
 recipeFinder();
-
-
-
-
-

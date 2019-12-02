@@ -27,39 +27,33 @@ edamam();
 
 // got this from w3schools and Stack Overflow
 
-const glutenFree = document.querySelector("gluten-freeCheckBox");   
-glutenFree.addEventListener( 'change', function() {
-    if(this.checked) {
-        // Checkbox is checked..
-    } else {
-        // Checkbox is not checked..
-    }
-});
-
-const dairyFree = document.querySelector("dairy-freeCheckBox");
-dairyFree.addEventListener( 'change', function() {
-    if(this.checked) {
-        // Checkbox is checked..
-    } else {
-        // Checkbox is not checked..
-    }
-});
+function boxcheck(){
 
 const vegan =  document.querySelector("veganCheckBox");
 vegan.addEventListener( 'change', function() {
     if(this.checked) {
         // Checkbox is checked..
+        dietaryRescritions.push("vegan")
     } else {
         // Checkbox is not checked..
+
     }
 });
-
 
 const vegetarian = document.querySelector("vegetarianCheckBox");
 vegetarian.addEventListener( 'change', function() {
     if(this.checked) {
         // Checkbox is checked..
+        dietaryRescritions.push("vegetarian")
     } else {
         // Checkbox is not checked..
+
     }
 });
+
+}
+
+const mainIngredient = UserInputEl.value;
+const userInput = { mainIngredient, vegan, vegetarian,}
+
+findRecipe(userInput)
