@@ -158,6 +158,36 @@ function recipeFinder(){
 
 organizeRecipeData();
 
+function storeUserInput(){
+
+	const vegan =  document.querySelector("veganCheckBox");
+	vegan.addEventListener( 'change', function() {
+		if(this.checked) {
+			// Checkbox is checked..
+			dietaryRescritions.push("vegan")
+		} else {
+			// Checkbox is not checked..
+	
+		}
+	});
+	
+	const vegetarian = document.querySelector("vegetarianCheckBox");
+	vegetarian.addEventListener( 'change', function() {
+		if(this.checked) {
+			// Checkbox is checked..
+			dietaryRescritions.push("vegetarian")
+		} else {
+			// Checkbox is not checked..
+	
+		}
+	});
+	
+	const mainIngredient = UserInputEl.value;
+	const userInput = { mainIngredient, vegan, vegetarian,}
+	
+	}
+
+
 function populateRecipe(){
 	//onclicks on the recipe options
 	const foodResponse = foodObject;
