@@ -21,7 +21,7 @@ We created this project from the outline given to us by our Triology Education S
 ## Contributing 
 We built this application with our assigned group, Jake O'Toole, Mary Jacobs, Mark McGraw and Patrick Brown. We also had help from our instructor and TAs.
 
-## Challanges
+## Challenges
 As a group we found it difficult and nerve racking to have all four of us "pushing" and "pulling" our Git repository. It was hard to place our own code and have it successfully interact with our groups code. We also had to use new terminal commands that we haven't used before. It took us awhile to get confortable trusting the process. Mary mentioned that using Balma as our CSS framework had different class names such as "is-ancestor" and "is-child" which took awhile to remember. Mark and Patrick said that the apis was difficult to use because the documentation wasn't thorough.  Mark had to use trial and error while setting up his queryURL and Patrick commented that he had to read all of the documentation for the food api to make sure he understood which pieces of information he would need for his functions. 
 
 ## Live Site
