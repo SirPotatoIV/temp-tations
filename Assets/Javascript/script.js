@@ -151,11 +151,12 @@ function recipeFinder(){
 				document.getElementById(servingsAndtimeElId).innerText = "Total Time: ("+prepAndCookTime+") Servings: ("+recipeServings+")";
 				// -- continue loop until all 6 recipes are displayed
 		}
-<<<<<<< HEAD
 		
 		return foodResponse;
 
 	}
+
+organizeRecipeData();
 
 function populateRecipe(){
 	//onclicks on the recipe options
@@ -168,8 +169,9 @@ function populateRecipe(){
 		recipeCards[i].addEventListener("click", function(){
 		// change inner text of ingredient list to data set foodObject
 			console.log("click is working");
-			document.getElementById("ingredientsList").innerText = foodObject.data.hits.ingredientLines
-			// console.log(foodResponse.ingredientLines);
+			document.getElementById("ingredientsList").innerText = foodResponse.data.hits[i].recipe.ingredientLines+ "<lb>";
+			console.log(foodResponse.data.hits[i].recipe.ingredientLines);
+			console.log(i);
 
 	
 
@@ -179,10 +181,6 @@ function populateRecipe(){
 	//
 	}
 
-=======
-	}
-	organizeRecipeData();
->>>>>>> bb2fb6312cf66ac53c8a565bb3b1ca04224f3053
 }
 populateRecipe ();
 
