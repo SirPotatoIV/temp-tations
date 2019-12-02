@@ -1,6 +1,6 @@
 # pikachu-posse
 
-# Temp-Tations
+    # Temp-Tations
 
 ## Description 
 This application is an elegant solution for searching for a recipe based on the user’s local temperature. Users can search for main ingredients and the application will return a list of recipes appropriate for the current temperature. For example, if the temperature is below freezing, the app will return more soups, baked goods, casseroles, and comfort foods. If it is very warm outside, more grillable foods, cold salads and blended beverages will appear. 

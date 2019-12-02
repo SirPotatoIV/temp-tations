@@ -27,7 +27,7 @@ edamam();
 
 // got this from w3schools and Stack Overflow
 
-function boxcheck(){
+function storeUserInput(){
 
 const vegan =  document.querySelector("veganCheckBox");
 vegan.addEventListener( 'change', function() {
@@ -51,9 +51,10 @@ vegetarian.addEventListener( 'change', function() {
     }
 });
 
-}
-
 const mainIngredient = UserInputEl.value;
 const userInput = { mainIngredient, vegan, vegetarian,}
 
-findRecipe(userInput)
+
+}
+
+
