@@ -104,7 +104,7 @@ function recipeFinder(){
 		// })
 		const foodResponse = foodObject;
 		console.log('food Response created foodReponse:', foodResponse);
-		organizeRecipeData(foodResponse);
+		return foodResponse;
 		
 	}
 	// Currently the function gets called once the page is loaded, but in future updates the function will be called once the user clicks search
@@ -112,8 +112,9 @@ function recipeFinder(){
 	
 	// Function will be used to take the reponse from the food API and organize the data so it is usuable.
 	// Will also display the recipe summaries in tiles.
-	function organizeRecipeData(foodResponse){
-		const recipes = foodResponse.data.hits
+	function organizeRecipeData(){
+		const foodResponse = getRecipes();
+		const recipes = foodResponse.data.hits;
 		// Currently set to three for testing purposes. Eventually will be switched to 6. - JO
 		const numRecipesToDisplay = 6;
 		// console.log('unsorted recipes and sorted Recipes: ', unsortedRecipes, sortedRecipes);
@@ -150,6 +151,7 @@ function recipeFinder(){
 				document.getElementById(servingsAndtimeElId).innerText = "Total Time: ("+prepAndCookTime+") Servings: ("+recipeServings+")";
 				// -- continue loop until all 6 recipes are displayed
 		}
+<<<<<<< HEAD
 		
 		return foodResponse;
 
@@ -177,6 +179,10 @@ function populateRecipe(){
 	//
 	}
 
+=======
+	}
+	organizeRecipeData();
+>>>>>>> bb2fb6312cf66ac53c8a565bb3b1ca04224f3053
 }
 populateRecipe ();
 

@@ -52,3 +52,8 @@ vegetarian.addEventListener( 'change', function() {
 });
 
 }
+
+const mainIngredient = UserInputEl.value;
+const userInput = { mainIngredient, vegan, vegetarian,}
+
+findRecipe(userInput)
