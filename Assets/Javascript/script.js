@@ -169,9 +169,21 @@ function populateRecipe(){
 		recipeCards[i].addEventListener("click", function(){
 		// change inner text of ingredient list to data set foodObject
 			console.log("click is working");
-			document.getElementById("ingredientsList").innerText = foodResponse.data.hits[i].recipe.ingredientLines+ "<lb>";
+			const theIngredients = foodResponse.data.hits[i].recipe.ingredientLines
+			document.getElementById("ingredientsList").innerText = foodResponse.data.hits[i].recipe.ingredientLines ;
 			console.log(foodResponse.data.hits[i].recipe.ingredientLines);
-			console.log(i);
+			
+
+			//put title of recipe in
+			// const theRecipeTitle = foodResponse.data.hits[i].recipe.label;
+			document.getElementById("recipeLabel").innerText = foodResponse.data.hits[i].recipe.label;
+			console.log(foodResponse.data.hits[i].recipe.label);
+
+			//put image in
+
+
+
+			//link to real recipe
 
 	
 
