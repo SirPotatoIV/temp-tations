@@ -234,12 +234,10 @@ function recipeFinder() {
 
 			//put image in
 			document.getElementById("recipeImage").setAttribute("src",foodResponse.data.hits[i].recipe.image)
-			document.getElementById("recipeImage").removeAttribute("class","is-hidden")
 
-			// <img id="recipeImage" src="` + foodResponse.data.hits[i].recipe.image + ` ></img>`
-			console.log(foodResponse.data.hits[i].recipe.image);
-		
-			console.log("hello",i)
+			
+			document.getElementById("recipeImage").removeAttribute("class","is-hidden")
+	
 
 			//MARK link to real recipe here: 
 			const recipeURL = foodResponse.data.hits[i].recipe.url
@@ -249,8 +247,7 @@ function recipeFinder() {
 
 
 	})
-	// console.log(recipeCards);
-	//
+
 	}
 
 
