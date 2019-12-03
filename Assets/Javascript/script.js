@@ -12,22 +12,15 @@ function recipeFinder() {
 	// Call the API, make a request to return temperature parameter
 
 	function weatherData() {
-		const ingredientList = document.getElementById("IngredientList");
-		
-		const summerFoods = ["summer", "grilled","pasta salad", "salad","cold","fresh"];
-		const springFoods = ["pizza", "sandwich", "breakfast", "brunch"];
-		const winterFoods = ["soup", "stew","casserole","chili", "warm","hot dish","roasted","baked"];
 
 		const searchButton = document.getElementById("search-button")
+
 		searchButton.addEventListener("click", function () {
 
 			event.preventDefault();
 			const APIKey = "05658cc7a88941a9b5ad8ea87ffcaf89"
-
 			const zipcodeInput = document.getElementById("user-location").value;
-
 			const queryURL = "https://api.weatherbit.io/v2.0/current?&postal_code=" + zipcodeInput + "&country=US&units=imperial&key=" + APIKey
-
 
 			axios.get(queryURL)
 				.then(function (response) {
@@ -50,12 +43,13 @@ function recipeFinder() {
 					const summerFoods = ["summer", "grilled", "pasta salad", "salad", "cold", "fresh"];
 					const springFoods = ["pizza", "sandwich", "breakfast", "brunch"];
 					const winterFoods = ["soup", "stew", "casserole", "chili", "warm", "hot dish", "roasted", "baked"];
-					let randomIndex = 0;
+					
+					// used loDash to randomly select a word for the arrays above.
 					// if summer temperature, 
 					// then send summerFoods array
 
 					if (summerTemp) {
-						storeUserInput(_.sample(summerTemp))
+						storeUserInput(_.sample(summerFoods))
 					};
 					
 					// if spring temperature,
@@ -106,8 +100,6 @@ function recipeFinder() {
 			getRecipes(userInput);
 	}
 
-
-
 	// Function will be used to call the food api and get reciepes based on user input
 	// -- Get user's main ingredient
 	// -- Get user's dietary restrictions
@@ -139,15 +131,11 @@ function recipeFinder() {
 			}
 		}
 
-		// // Get request to food api
-		// axios.get(edamamURL).then(function(foodResponse){
-		// 	organizeRecipeData(foodResponse);
+		// Get request to food api
+		axios.get(edamamURL).then(function(foodResponse){
+			organizeRecipeData(foodResponse);
 
-		// })
-		
-		// TEMP CODE!! REMOVE AND UNCOMMENT CODE ABOVE BEFORE 8!!
-		const foodResponse = foodObject;
-		organizeRecipeData(foodResponse);
+		})
 	}
 
 	// Function will be used to take the reponse from the food API and organize the data so it is usuable.
@@ -191,7 +179,6 @@ function recipeFinder() {
 			document.getElementById(servingsAndtimeElId).innerText = "Total Time: (" + prepAndCookTime + ") Servings: (" + recipeServings + ")";
 			// -- continue loop until all 6 recipes are displayed
 		}
-		// return foodResponse;
 		populateRecipe(foodResponse);
 	}
 
@@ -208,6 +195,7 @@ function recipeFinder() {
 				ingredientListEl.innerHTML = "";
 				const theIngredients = foodResponse.data.hits[i].recipe.ingredientLines
 				let j = 0;
+				// used lodash here just for practice. Probably would be better to use a forEach.
 				_.times(theIngredients.length, function(){
 					ingredientEl = document.createElement('li');
 					ingredientEl.innerText = theIngredients[j];
