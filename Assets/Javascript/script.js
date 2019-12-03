@@ -50,9 +50,9 @@ function recipeFinder() {
 					const summerTemp = (temperature >= 71);
 					const springTemp = (temperature <= 70 && temperature >= 40);
 					const winterTemp = (temperature <= 39);
-					console.log("winterTemp:", winterTemp);
-					console.log("springTemp:", springTemp);
-					console.log("summerTemp:", summerTemp);
+					// console.log("winterTemp:", winterTemp);
+					// console.log("springTemp:", springTemp);
+					// console.log("summerTemp:", summerTemp);
 
 					// Define seasonal genres of food
 					const summerFoods = ["summer", "grilled", "pasta salad", "salad", "cold", "fresh"];
@@ -63,29 +63,21 @@ function recipeFinder() {
 					// then send summerFoods array
 
 					if (summerTemp) {
-						console.log(summerFoods)
-						randomIndex = Math.floor(Math.random()*summerFoods.length);
-						storeUserInput(summerFoods[randomIndex])
+						storeUserInput(_.sample(summerTemp))
 					};
 					
 					// if spring temperature,
 					// then send springFoods array
 					
 					if (springTemp) {
-						console.log(springFoods)
-						randomIndex = Math.floor(Math.random()*springFoods.length);
-						storeUserInput(springFoods[randomIndex])
+						storeUserInput(_.sample(springFoods))
 					};
 					
 					// if winter temperature,
 					// then send winterFoods array
 					
 					if (winterTemp) {
-						console.log(winterFoods)
-						randomIndex = Math.floor(Math.random()*winterFoods.length);
-						console.log("Random keyword chosen: ", winterFoods[randomIndex])
-						storeUserInput(winterFoods[randomIndex])
-						
+						storeUserInput(_.sample(winterFoods))
 					};
 
 				})
