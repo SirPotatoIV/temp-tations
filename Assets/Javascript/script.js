@@ -22,7 +22,6 @@ function recipeFinder() {
 		searchButton.addEventListener("click", function () {
 
 			event.preventDefault();
-
 			const APIKey = "05658cc7a88941a9b5ad8ea87ffcaf89"
 
 			const zipcodeInput = document.getElementById("user-location").value;
@@ -140,12 +139,15 @@ function recipeFinder() {
 			}
 		}
 
-		// Get request to food api
-		axios.get(edamamURL).then(function(foodResponse){
-			organizeRecipeData(foodResponse);
+		// // Get request to food api
+		// axios.get(edamamURL).then(function(foodResponse){
+		// 	organizeRecipeData(foodResponse);
 
-		})
+		// })
 		
+		// TEMP CODE!! REMOVE AND UNCOMMENT CODE ABOVE BEFORE 8!!
+		const foodResponse = foodObject;
+		organizeRecipeData(foodResponse);
 	}
 
 	// Function will be used to take the reponse from the food API and organize the data so it is usuable.
@@ -197,33 +199,35 @@ function recipeFinder() {
 	
 		const recipeCards = document.querySelectorAll(".preview")
 		// need to set class of SHOW for the container.
+		const ingredientListEl = document.getElementById("ingredientsList");
 		
 		for (let i = 0; i < recipeCards.length; i++){
 			recipeCards[i].addEventListener("click", function(){
-			// change inner text of ingredient list to data set foodObject
-				
-				const theIngredients = foodResponse.data.hits[i].recipe.ingredientLines
-				document.getElementById("ingredientsList").innerText = foodResponse.data.hits[i].recipe.ingredientLines ;
-			
-				
+			// change inner text of ingredient list to data set foodResponse
 
+				ingredientListEl.innerHTML = "";
+				const theIngredients = foodResponse.data.hits[i].recipe.ingredientLines
+				let j = 0;
+				_.times(theIngredients.length, function(){
+					ingredientEl = document.createElement('li');
+					ingredientEl.innerText = theIngredients[j];
+					ingredientListEl.append(ingredientEl);
+					j++;
+				})
+			
 				// put title of recipe in
 				// const theRecipeTitle = foodResponse.data.hits[i].recipe.label;
 				document.getElementById("recipeLabel").innerText = foodResponse.data.hits[i].recipe.label;
-		
-
-			//put image in
-			document.getElementById("recipeImage").setAttribute("src",foodResponse.data.hits[i].recipe.image)
-
 			
-			document.getElementById("recipeImage").removeAttribute("class","is-hidden")
-	
+				//put image in
+				document.getElementById("recipeImage").setAttribute("src",foodResponse.data.hits[i].recipe.image)
+				document.getElementById("recipeImage").removeAttribute("class","is-hidden")
 
-			//MARK link to real recipe here: 
-			const recipeURL = foodResponse.data.hits[i].recipe.url
-		
-			// document.getElementById("recipeLink").setAttribute("href", foodResponse.data.hits[i].recipe.URL);
-			document.getElementById("recipeLink").innerHTML = '<a href="' + recipeURL + '" target="_blank" id="recipeLink" class="button">See Full Recipe</a>';
+				//MARK link to real recipe here: 
+				const recipeURL = foodResponse.data.hits[i].recipe.url
+			
+				// document.getElementById("recipeLink").setAttribute("href", foodResponse.data.hits[i].recipe.URL);
+				document.getElementById("recipeLink").innerHTML = '<a href="' + recipeURL + '" target="_blank" id="recipeLink" class="button">See Full Recipe</a>';
 
 			})
 
