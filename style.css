@@ -13,8 +13,9 @@ body{
 }
 
 .recipe-section{
+    color: aquamarine;
     background-color: salmon;
-
+    border: blueviolet;
 }
 
 .current-temp{
