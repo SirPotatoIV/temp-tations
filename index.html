@@ -5,22 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../pikachu-posse/Assets/CSS/bulma.css">
-    <link rel="stylesheet" href="../pikachu-posse/Assets/CSS/style.css">
+    <link rel="stylesheet" href="Assets/CSS/bulma.css">
+    <link rel="stylesheet" href="Assets/CSS/style.css"> 
     <title>Temp-Tations</title>
 </head>
 <body class="has-navbar-fixed-top">
 
-  <div class="navbar-menu navbar is-transparent is-fixed-top">
+  <div class="navbar-menu navbar is-transparent is-fixed-top is-flex-mobile">
     <div class="navbar-start">
-      <div class="navbar-item">
-     <p id= "currentTemperature"> Current Temperature </p>
+      <div class="navbar-item is-flex-mobile">
+     <p id="currentTemperature" class="is-size-8-mobile"> Current Temperature </p>
     </div>
     </div>
   
-    <div class="navbar-end">
+    <div class="navbar-end is-flex-mobile">
         <div class="navbar-item">
-        <p id= "currentCity"> Your City </p>
+        <p id= "currentCity" class="is-size-8-mobile"> Your City </p>
       </div>
   </div>
 </div>
@@ -29,11 +29,10 @@
         <section class="hero is-info is-bold is-medium">
             <div class="hero-body">
                 <div class="container">
-                    <h1 class="title">
-                      Temp-Tations
-                    </h1>
+                  <img class="image is-centered" src="../pikachu-posse/Assets/Images/TempTations_white.png" alt="TempTations">
+                    <h1 class="title">Tasty table treats for temperatures, temperate to tropical. </h1>
                     <h2 class="subtitle">
-                      Search by a main ingredient, or dietary restriction.
+                      Enter your zipcode, and one main ingredient to find recipes that fit the weather outside. 
                     </h2>
                     
                     <div class="row">
@@ -70,7 +69,7 @@
         </section>
 
 
-        <section class="section choices-section">
+        <section class="section choices-section second">
             <div id="choice-display" class="container">
       <!-- bulma tiles work with a family ancestor/parent/children system -->
                 <div class="tile is-ancestor">
@@ -117,7 +116,7 @@
         </section>
         
         <!-- This will all be hidden at the start, and then populate after the user clicks on a recipe -->
-        <section class="section recipe-section d-none">
+        <section class="section recipe-section has-background-info">
           <div class="container">
             <div class="tile is-ancestor">
                 <div class="tile is-4 is-vertical is-parent">
@@ -149,6 +148,14 @@
               </div>
           </div>
         </section>
+
+        <footer class="footer has-background-grey">
+          <a class="button">Patrick Brown</a>
+          <a class="button">Mary Jacobs</a>
+          <a class="button">Mark McGraw</a>
+          <a class="button">Jake O'Toole</a>
+
+        </footer>
 
  <!-- Scripts located below -->
         <!-- Used to gain access to axios library -->

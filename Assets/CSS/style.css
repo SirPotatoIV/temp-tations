@@ -1,0 +1,41 @@
+body{
+background-color: white;
+}
+
+
+.dietRestrictions{
+    padding-top: 15px;
+}
+
+.checkbox{
+    padding-top: 15px;
+    height: 20px;
+    width: 20px;
+}
+
+.recipe-section{
+}
+
+.current-temp{
+    font-size: 42px;
+}
+
+.tile{
+    padding: 10px 10px;
+    background-color: white;
+}
+
+ol{
+margin: auto;
+padding: 25px 25px;
+}
+.navbar-menu{
+    height: 75px;
+
+}
+
+.hero-body{
+    padding-top: 75px;
+
+
+}

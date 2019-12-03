@@ -1,5 +1,11 @@
 body{
-    background-color: salmon;
+    background-color: salmon !important;
+}
+
+
+
+a{
+    font-size: 50px;
 }
 
 .dietRestrictions{
@@ -13,7 +19,6 @@ body{
 }
 
 .recipe-section{
-    color: aquamarine;
     background-color: salmon;
     border: blueviolet;
 }
@@ -33,5 +38,11 @@ padding: 25px 25px;
 }
 .navbar-menu{
     height: 75px;
+
+}
+
+.hero-body{
+    padding-top: 75px;
+
 
 }
