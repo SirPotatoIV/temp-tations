@@ -1,4 +1,4 @@
-body{
+/* body{
     background-color: salmon;
 }
 
@@ -13,7 +13,6 @@ body{
 }
 
 .recipe-section{
-    color: aquamarine;
     background-color: salmon;
     border: blueviolet;
 }
@@ -35,3 +34,9 @@ padding: 25px 25px;
     height: 75px;
 
 }
+
+.hero-body{
+    padding-top: 75px;
+
+
+} */
