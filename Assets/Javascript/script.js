@@ -20,14 +20,12 @@ function recipeFinder() {
 
 		const searchButton = document.getElementById("search-button")
 		searchButton.addEventListener("click", function () {
-			console.log("buttonclick")
 
 			event.preventDefault();
 
 			const APIKey = "05658cc7a88941a9b5ad8ea87ffcaf89"
 
 			const zipcodeInput = document.getElementById("user-location").value;
-			console.log(zipcodeInput);
 
 			const queryURL = "https://api.weatherbit.io/v2.0/current?&postal_code=" + zipcodeInput + "&country=US&units=imperial&key=" + APIKey
 
@@ -36,7 +34,6 @@ function recipeFinder() {
 				.then(function (response) {
 
 					// transfer content to HTML
-					console.log(response)
 
 					document.getElementById("currentTemperature").innerHTML = "Temperature (F): " + response.data.data[0].temp;
 
@@ -44,15 +41,11 @@ function recipeFinder() {
 
 					// Defining temperature as returned data
 					const temperature = response.data.data[0].temp;
-					console.log(temperature)
 
 					// Define summer, spring, & winter temperature ranges based on returned data
 					const summerTemp = (temperature >= 71);
 					const springTemp = (temperature <= 70 && temperature >= 40);
 					const winterTemp = (temperature <= 39);
-					// console.log("winterTemp:", winterTemp);
-					// console.log("springTemp:", springTemp);
-					// console.log("summerTemp:", summerTemp);
 
 					// Define seasonal genres of food
 					const summerFoods = ["summer", "grilled", "pasta salad", "salad", "cold", "fresh"];
@@ -110,7 +103,6 @@ function recipeFinder() {
 			} else {
 				// Checkbox is not checked..
 			};
-			console.log("User Inputs: ", userInput)
 
 			getRecipes(userInput);
 	}
@@ -150,8 +142,6 @@ function recipeFinder() {
 
 		// Get request to food api
 		axios.get(edamamURL).then(function(foodResponse){
-			console.log(edamamURL);
-			console.log(foodResponse);
 			organizeRecipeData(foodResponse);
 
 		})
@@ -165,10 +155,8 @@ function recipeFinder() {
 		const recipes = foodResponse.data.hits;
 		// Currently set to three for testing purposes. Eventually will be switched to 6. - JO
 		const numRecipesToDisplay = 5;
-		// console.log('unsorted recipes and sorted Recipes: ', unsortedRecipes, sortedRecipes);
 
 		// For loop used to display recipe tiles.
-		console.log("hello",recipes);
 
 		for (let i = 0; i <= numRecipesToDisplay; i++) {
 			// -- reference a single recipe in the variable sortedRecipes
@@ -188,10 +176,10 @@ function recipeFinder() {
 			// -- create the child tile using innerHTML
 			// -- -- create unique ids for each element that will be used to display the title, servings, and prep time
 			document.getElementById(parentSummaryTileId).innerHTML = `
-		<article class="tile is-child box cards">
-			<p id="title`+ i + `" class="title">Title Goes Here</p>
-			<p id="servingsAndtime`+ i + `" class="subtitle` + (i + 1) + `">Servings and Total Time</p>
-		</article>`;
+			<article class="tile is-child box cards">
+				<p id="title`+ i + `" class="title">Title Goes Here</p>
+				<p id="servingsAndtime`+ i + `" class="subtitle` + (i + 1) + `">Servings and Total Time</p>
+			</article>`;
 			// Changes the innerText of the generated HTML to display the recipe title, servings, and prep time
 			// -- updates the recipe summary tile title
 			const titleElId = summaryTileEls[i].title;
@@ -213,16 +201,16 @@ function recipeFinder() {
 		for (let i = 0; i < recipeCards.length; i++){
 			recipeCards[i].addEventListener("click", function(){
 			// change inner text of ingredient list to data set foodObject
-				console.log("click is working");
+				
 				const theIngredients = foodResponse.data.hits[i].recipe.ingredientLines
 				document.getElementById("ingredientsList").innerText = foodResponse.data.hits[i].recipe.ingredientLines ;
-				console.log(foodResponse.data.hits[i].recipe.ingredientLines);
+			
 				
 
-				//put title of recipe in
+				// put title of recipe in
 				// const theRecipeTitle = foodResponse.data.hits[i].recipe.label;
 				document.getElementById("recipeLabel").innerText = foodResponse.data.hits[i].recipe.label;
-				console.log(foodResponse.data.hits[i].recipe.label);
+		
 
 			//put image in
 			document.getElementById("recipeImage").setAttribute("src",foodResponse.data.hits[i].recipe.image)
@@ -233,7 +221,7 @@ function recipeFinder() {
 
 			//MARK link to real recipe here: 
 			const recipeURL = foodResponse.data.hits[i].recipe.url
-			console.log(recipeURL);
+		
 			// document.getElementById("recipeLink").setAttribute("href", foodResponse.data.hits[i].recipe.URL);
 			document.getElementById("recipeLink").innerHTML = '<a href="' + recipeURL + '" target="_blank" id="recipeLink" class="button">See Full Recipe</a>';
 
