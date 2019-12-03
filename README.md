@@ -10,13 +10,13 @@ This application is an elegant solution for searching for a recipe based on the 
 Place holder
 
 ## Installation 
-
+If all the files are kept in a single fold and the user has an internet connection they should be able to use the application.  
 
 ## Usage
 The usage was for our group to practice our CSS, HTML, and Javascript skills. We also had to use two different apis that we did not use in class and could not use Bootstrap styling. 
 
 ## Credit
-We created this project from the outline given to us by our Triology Education Services instructor. We also took code from our homework and in class activities. We have also cited other sources within our Javascript, HTLM and CSS.  
+We created this project from the outline given to us by our Triology Education Services instructor. We also took code from our homework and in class activities. Paul Hendrickson helped come up with the idea of having an application use weather data to help pick recipes. We have also cited other sources within our Javascript, HTLM and CSS.  
 
 ## Contributing 
 We built this application with our assigned group, Jake O'Toole, Mary Jacobs, Mark McGraw and Patrick Brown. We also had help from our instructor and TAs.
