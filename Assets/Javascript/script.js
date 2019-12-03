@@ -245,14 +245,10 @@ function recipeFinder() {
 			// document.getElementById("recipeLink").setAttribute("href", foodResponse.data.hits[i].recipe.URL);
 			document.getElementById("recipeLink").innerHTML = '<a href="' + recipeURL + '" target="_blank" id="recipeLink" class="button">See Full Recipe</a>';
 
+			})
 
-	})
-
+		}
 	}
-
-
-	}
-	populateRecipe ();
 
 }
 recipeFinder();
