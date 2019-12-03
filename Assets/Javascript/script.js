@@ -196,7 +196,7 @@ function recipeFinder() {
 			// -- create the child tile using innerHTML
 			// -- -- create unique ids for each element that will be used to display the title, servings, and prep time
 			document.getElementById(parentSummaryTileId).innerHTML = `
-		<article class="tile is-child box">
+		<article class="tile is-child box cards">
 			<p id="title`+ i + `" class="title">Title Goes Here</p>
 			<p id="servingsAndtime`+ i + `" class="subtitle` + (i + 1) + `">Servings and Total Time</p>
 		</article>`;

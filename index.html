@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link rel="stylesheet" href="Assets/CSS/bulma.css">
+    <link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Roboto+Condensed&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Assets/CSS/style.css"> 
     <title>Temp-Tations</title>
 </head>
@@ -29,15 +30,15 @@
         <section class="hero is-info is-bold is-medium">
             <div class="hero-body">
                 <div class="container">
-                  <img class="image is-centered" src="../pikachu-posse/Assets/Images/TempTations_white.png" alt="TempTations">
-                    <h1 class="title">Tasty table treats for temperatures, temperate to tropical. </h1>
+                  <img class="image is-centered logo" src="../pikachu-posse/Assets/Images/TempTations_white.png" alt="TempTations">
+                    <h1 class="title">Tasty table treats for temperatures, tundra to tropical. </h1>
                     <h2 class="subtitle">
                       Enter your zipcode, and one main ingredient to find recipes that fit the weather outside. 
                     </h2>
                     
                     <div class="row">
                             <p class="control has-icons-left">
-                                    <input id="user-location" class="input" class = "zipcode" type="search" placeholder="Search Zip Code">
+                                    <input id="user-location" class="input" class = "zipcode" type="search" placeholder="Search by US Zip Code">
                                       <span class="icon is-small is-left">
                                             <i class="fas fa-cloud-meatball"></i>
                                       </span>
@@ -45,7 +46,7 @@
                                   
                             <br>
                             <p class="control has-icons-left">
-                              <input id="user-search" class="input" type="search" placeholder="Search Main Ingredient">
+                              <input id="user-search" class="input" type="search" placeholder="Search by 1-2 main ingredients">
                                 <span class="icon is-small is-left">
                                     <i class="fas fa-utensils"></i>
                                 </span>
@@ -74,19 +75,19 @@
       <!-- bulma tiles work with a family ancestor/parent/children system -->
                 <div class="tile is-ancestor">
                     <div id="parent0" class="tile is-parent preview">
-                        <article class="tile is-child box">
+                        <article class="tile is-child box cards">
                           <p class="title">Recipe 1</p>
                           <p class="subtitle1">Servings:______ Prep Time:______</p>
                         </article>
                     </div>
                     <div id="parent1" class="tile is-parent preview">
-                        <article class="tile is-child box">
+                        <article class="tile is-child box cards">
                           <p class="title">Recipe 2</p>
                           <p class="subtitle2">Servings:______ Prep Time:______</p>
                         </article>
                     </div>
                     <div id="parent2" class="tile is-parent preview">
-                        <article class="tile is-child box">
+                        <article class="tile is-child box cards">
                           <p class="title">Recipe 3</p>
                           <p class="subtitle3">Servings:______ Prep Time:______</p>
                         </div>
@@ -94,19 +95,19 @@
                 </div>
                   <div class="tile is-ancestor">
                         <div id="parent3" class="tile is-parent preview">
-                          <article class="tile is-child box">
+                          <article class="tile is-child box cards">
                             <p class="title">Recipe 4</p>
                             <p class="subtitle4">Servings:______ Prep Time:______</p>
                           </article>
                         </div>
                         <div id="parent4" class="tile is-parent preview">
-                          <article class="tile is-child box">
+                          <article class="tile is-child box cards">
                             <p class="title">Recipe 5</p>
                             <p class="subtitle5">Servings:______ Prep Time:______</p>
                           </article>
                         </div>
                         <div id="parent5" class="tile is-parent preview">
-                          <article class="tile is-child box">
+                          <article class="tile is-child box cards">
                             <p class="title">Recipe 6</p>
                             <p class="subtitle6">Servings:______ Prep Time:______</p>
                             </div>
@@ -120,11 +121,6 @@
           <div class="container">
             <div class="tile is-ancestor">
                 <div class="tile is-4 is-vertical is-parent">
-                  <div class="tile is-child box">
-                      <p class="title">Description</p>
-                      <p class="yield">Yield: </p>
-                      <p class="healthLabels">Health Labels:</p>
-                  </div>
                   <div class="tile is-child box">
                     <p class="title">Ingredients</p>
                     <ul id="ingredientsList" class="ingredients-list">
@@ -149,12 +145,22 @@
           </div>
         </section>
 
-        <footer class="footer has-background-grey">
-          <a class="button">Patrick Brown</a>
-          <a class="button">Mary Jacobs</a>
-          <a class="button">Mark McGraw</a>
-          <a class="button">Jake O'Toole</a>
-
+        <footer class="footer">
+          <div class="foot">
+          <a href="https://github.com/ptrckbrown94" target="_blank" class="button">Patrick Brown</a>
+          <a href="https://github.com/TheMaryJacobs" target="_blank" class="button">Mary Jacobs</a>
+          <a href="https://github.com/marktmcgraw" target="_blank" class="button">Mark McGraw</a>
+          <a href="https://github.com/SirPotatoIV" target="_blank" class="button">Jake O'Toole</a>
+          </div>
+          <br>
+          <div class="foot">
+            <p>I customized the wicked cool background on my homepage at <a href="https://www.svgbackgrounds.com/">SVGBackgrounds.com.</a></p>
+          </div>
+          <br>
+          <div class="foot">
+          <div id="edamam-badge" data-color="white"></div>
+          </div>
+      </div>
         </footer>
 
  <!-- Scripts located below -->
@@ -164,6 +170,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.core.js"></script>
         <!-- Temporarily storing a response from the food api to reduce total number of requests used -->
         <script src="./Assets/Javascript/foodObject.js"></script>
+        <!--Edamam Attribution Badge-->
+        <script src="https://developer.edamam.com/attribution/badge.js"></script>
         <!-- Our javascript file -->
         <script src="./Assets/Javascript/script.js"></script>
 </body>
