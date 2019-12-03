@@ -232,17 +232,26 @@ function recipeFinder() {
 				document.getElementById("recipeLabel").innerText = foodResponse.data.hits[i].recipe.label;
 				console.log(foodResponse.data.hits[i].recipe.label);
 
-				//put image in
-				document.getElementById("recipeImage").setAttribute("src",foodResponse.data.hits[i].recipe.image)
-				// <img id="recipeImage" src="` + foodResponse.data.hits[i].recipe.image + ` ></img>`
-				console.log(foodResponse.data.hits[i].recipe.image);
-				
+			//put image in
+			document.getElementById("recipeImage").setAttribute("src",foodResponse.data.hits[i].recipe.image)
+			document.getElementById("recipeImage").removeAttribute("class","is-hidden")
 
-				console.log("hello",i)
-				//link to real recipe
-			})
-	
-		}
+			// <img id="recipeImage" src="` + foodResponse.data.hits[i].recipe.image + ` ></img>`
+			console.log(foodResponse.data.hits[i].recipe.image);
+		
+			console.log("hello",i)
+
+			//MARK link to real recipe here: 
+			const recipeURL = foodResponse.data.hits[i].recipe.url
+			console.log(recipeURL);
+			// document.getElementById("recipeLink").setAttribute("href", foodResponse.data.hits[i].recipe.URL);
+			document.getElementById("recipeLink").innerHTML = '<a href="' + recipeURL + '" target="_blank" id="recipeLink" class="button">See Full Recipe</a>';
+
+
+	})
+	// console.log(recipeCards);
+	//
+	}
 
 
 	}
