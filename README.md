@@ -27,5 +27,12 @@ As a group we found it difficult and nerve racking to have all four of us "pushi
 ## Live Site
 https://sirpotatoiv.github.io/pikachu-posse/
 
+## Screenshots
+![image](https://github.com/SirPotatoIV/pikachu-posse/blob/master/Assets/Images/IMG_8826.PNG?raw=true)
+![image](https://github.com/SirPotatoIV/pikachu-posse/blob/master/Assets/Images/IMG_8827.PNG?raw=true)
+![image](https://github.com/SirPotatoIV/pikachu-posse/blob/master/Assets/Images/IMG_8828.PNG?raw=true)
+
+
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
+
