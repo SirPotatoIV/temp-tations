@@ -1,41 +1,93 @@
 body{
-background-color: white;
+background-color:white;
+font-family: 'Roboto Condensed', sans-serif;
 }
 
-
-.dietRestrictions{
-    padding-top: 15px;
+h1{
+    text-align: center;
+    font-family: 'Bebas Neue', sans-serif;
+}
+h2{
+    text-align: center;
+}
+p{
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
-.checkbox{
-    padding-top: 15px;
-    height: 20px;
-    width: 20px;
-}
-
-.recipe-section{
+.hero{
+    box-shadow: 5px 10px #888888;
 }
 
 .current-temp{
     font-size: 42px;
 }
 
-.tile{
-    padding: 10px 10px;
+.cards{
     background-color: white;
 }
+
+.cards:hover{
+    background: rgb(165, 165, 165);
+    cursor: pointer;
+}
+
+.button{
+    font-family: 'Roboto Condensed', sans-serif;
+    padding: 5px 5px;
+}
+.logo {
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.button:hover{
+    background: black;
+    color: white;
+}
+
+.tile{
+    padding: 10px 10px;
+}
+
 
 ol{
 margin: auto;
 padding: 25px 25px;
 }
-.navbar-menu{
-    height: 75px;
 
+.navbar-menu{
+    height: 50px;
+    background-color: rgba(199, 199, 199, 0.829);
 }
 
+
 .hero-body{
-    padding-top: 75px;
+    padding-top: 50px;
+    align-items: center;
+}
+
+.second{
+    box-shadow: 5px 10px #888888;
+
+}
+.footer {
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 1000'%3E%3Cg %3E%3Ccircle fill='%23ffffff' cx='50' cy='0' r='50'/%3E%3Cg fill='%23fafafa' %3E%3Ccircle cx='0' cy='50' r='50'/%3E%3Ccircle cx='100' cy='50' r='50'/%3E%3C/g%3E%3Ccircle fill='%23f5f5f5' cx='50' cy='100' r='50'/%3E%3Cg fill='%23f1f1f1' %3E%3Ccircle cx='0' cy='150' r='50'/%3E%3Ccircle cx='100' cy='150' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ececec' cx='50' cy='200' r='50'/%3E%3Cg fill='%23e7e7e7' %3E%3Ccircle cx='0' cy='250' r='50'/%3E%3Ccircle cx='100' cy='250' r='50'/%3E%3C/g%3E%3Ccircle fill='%23e3e3e3' cx='50' cy='300' r='50'/%3E%3Cg fill='%23dedede' %3E%3Ccircle cx='0' cy='350' r='50'/%3E%3Ccircle cx='100' cy='350' r='50'/%3E%3C/g%3E%3Ccircle fill='%23d9d9d9' cx='50' cy='400' r='50'/%3E%3Cg fill='%23d5d5d5' %3E%3Ccircle cx='0' cy='450' r='50'/%3E%3Ccircle cx='100' cy='450' r='50'/%3E%3C/g%3E%3Ccircle fill='%23d0d0d0' cx='50' cy='500' r='50'/%3E%3Cg fill='%23cbcbcb' %3E%3Ccircle cx='0' cy='550' r='50'/%3E%3Ccircle cx='100' cy='550' r='50'/%3E%3C/g%3E%3Ccircle fill='%23c7c7c7' cx='50' cy='600' r='50'/%3E%3Cg fill='%23c2c2c2' %3E%3Ccircle cx='0' cy='650' r='50'/%3E%3Ccircle cx='100' cy='650' r='50'/%3E%3C/g%3E%3Ccircle fill='%23bebebe' cx='50' cy='700' r='50'/%3E%3Cg fill='%23b9b9b9' %3E%3Ccircle cx='0' cy='750' r='50'/%3E%3Ccircle cx='100' cy='750' r='50'/%3E%3C/g%3E%3Ccircle fill='%23b5b5b5' cx='50' cy='800' r='50'/%3E%3Cg fill='%23b0b0b0' %3E%3Ccircle cx='0' cy='850' r='50'/%3E%3Ccircle cx='100' cy='850' r='50'/%3E%3C/g%3E%3Ccircle fill='%23acacac' cx='50' cy='900' r='50'/%3E%3Cg fill='%23a7a7a7' %3E%3Ccircle cx='0' cy='950' r='50'/%3E%3Ccircle cx='100' cy='950' r='50'/%3E%3C/g%3E%3Ccircle fill='%23a3a3a3' cx='50' cy='1000' r='50'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: contain;
+}
+
+.foot{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 
+}
+.second{
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 1000'%3E%3Cg %3E%3Ccircle fill='%23ffffff' cx='50' cy='0' r='50'/%3E%3Cg fill='%23fafafa' %3E%3Ccircle cx='0' cy='50' r='50'/%3E%3Ccircle cx='100' cy='50' r='50'/%3E%3C/g%3E%3Ccircle fill='%23f5f5f5' cx='50' cy='100' r='50'/%3E%3Cg fill='%23f1f1f1' %3E%3Ccircle cx='0' cy='150' r='50'/%3E%3Ccircle cx='100' cy='150' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ececec' cx='50' cy='200' r='50'/%3E%3Cg fill='%23e7e7e7' %3E%3Ccircle cx='0' cy='250' r='50'/%3E%3Ccircle cx='100' cy='250' r='50'/%3E%3C/g%3E%3Ccircle fill='%23e3e3e3' cx='50' cy='300' r='50'/%3E%3Cg fill='%23dedede' %3E%3Ccircle cx='0' cy='350' r='50'/%3E%3Ccircle cx='100' cy='350' r='50'/%3E%3C/g%3E%3Ccircle fill='%23d9d9d9' cx='50' cy='400' r='50'/%3E%3Cg fill='%23d5d5d5' %3E%3Ccircle cx='0' cy='450' r='50'/%3E%3Ccircle cx='100' cy='450' r='50'/%3E%3C/g%3E%3Ccircle fill='%23d0d0d0' cx='50' cy='500' r='50'/%3E%3Cg fill='%23cbcbcb' %3E%3Ccircle cx='0' cy='550' r='50'/%3E%3Ccircle cx='100' cy='550' r='50'/%3E%3C/g%3E%3Ccircle fill='%23c7c7c7' cx='50' cy='600' r='50'/%3E%3Cg fill='%23c2c2c2' %3E%3Ccircle cx='0' cy='650' r='50'/%3E%3Ccircle cx='100' cy='650' r='50'/%3E%3C/g%3E%3Ccircle fill='%23bebebe' cx='50' cy='700' r='50'/%3E%3Cg fill='%23b9b9b9' %3E%3Ccircle cx='0' cy='750' r='50'/%3E%3Ccircle cx='100' cy='750' r='50'/%3E%3C/g%3E%3Ccircle fill='%23b5b5b5' cx='50' cy='800' r='50'/%3E%3Cg fill='%23b0b0b0' %3E%3Ccircle cx='0' cy='850' r='50'/%3E%3Ccircle cx='100' cy='850' r='50'/%3E%3C/g%3E%3Ccircle fill='%23acacac' cx='50' cy='900' r='50'/%3E%3Cg fill='%23a7a7a7' %3E%3Ccircle cx='0' cy='950' r='50'/%3E%3Ccircle cx='100' cy='950' r='50'/%3E%3C/g%3E%3Ccircle fill='%23a3a3a3' cx='50' cy='1000' r='50'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: contain;
 }
