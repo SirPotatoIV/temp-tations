@@ -168,7 +168,7 @@ function recipeFinder() {
 			document.getElementById(parentSummaryTileId).innerHTML = `
 			<article class="tile is-child box cards">
 				<p id="title`+ i + `" class="title">Title Goes Here</p>
-				<p id="servingsAndtime`+ i + `" class="subtitle` + (i + 1) + `">Servings and Total Time</p>
+				<p id="servingsAndtime`+ i + `" class="cooktime subtitle` + (i + 1) + `">Servings and Total Time</p>
 			</article>`;
 			// Changes the innerText of the generated HTML to display the recipe title, servings, and prep time
 			// -- updates the recipe summary tile title
