@@ -15,13 +15,13 @@
   <div class="navbar-menu navbar is-transparent is-fixed-top is-flex-mobile">
     <div class="navbar-start">
       <div class="navbar-item is-flex-mobile">
-     <p id="currentTemperature" class="is-size-8-mobile"> Current Temperature </p>
+     <p id="currentTemperature" class="is-size-8-mobile currentTemp"> Current Temperature </p>
     </div>
     </div>
   
     <div class="navbar-end is-flex-mobile">
         <div class="navbar-item">
-        <p id= "currentCity" class="is-size-8-mobile"> Your City </p>
+        <p id= "currentCity" class="is-size-8-mobile currentCity"> Your City </p>
       </div>
   </div>
 </div>
@@ -73,43 +73,44 @@
         <section class="section choices-section second">
             <div id="choice-display" class="container">
       <!-- bulma tiles work with a family ancestor/parent/children system -->
-                <div class="tile is-ancestor">
+      <h1 class="title">Enter Zip & Ingredient to View Recipes</h1>          
+      <div class="tile is-ancestor">
                     <div id="parent0" class="tile is-parent preview">
                         <article class="tile is-child box cards">
-                          <p class="title">Recipe 1</p>
-                          <p class="subtitle1">Servings:______ Prep Time:______</p>
+                          <p class="title 2">Recipe 1</p>
+                          <p class="subtitle1"></p>
                         </article>
                     </div>
                     <div id="parent1" class="tile is-parent preview">
                         <article class="tile is-child box cards">
-                          <p class="title">Recipe 2</p>
-                          <p class="subtitle2">Servings:______ Prep Time:______</p>
+                          <p class="title 2">Recipe 2</p>
+                          <p class="subtitle2"></p>
                         </article>
                     </div>
                     <div id="parent2" class="tile is-parent preview">
                         <article class="tile is-child box cards">
-                          <p class="title">Recipe 3</p>
-                          <p class="subtitle3">Servings:______ Prep Time:______</p>
+                          <p class="title 2">Recipe 3</p>
+                          <p class="subtitle3"></p>
                         </div>
                         </article>
                 </div>
                   <div class="tile is-ancestor">
                         <div id="parent3" class="tile is-parent preview">
                           <article class="tile is-child box cards">
-                            <p class="title">Recipe 4</p>
-                            <p class="subtitle4">Servings:______ Prep Time:______</p>
+                            <p class="title 2">Recipe 4</p>
+                            <p class="subtitle4"></p>
                           </article>
                         </div>
                         <div id="parent4" class="tile is-parent preview">
                           <article class="tile is-child box cards">
-                            <p class="title">Recipe 5</p>
-                            <p class="subtitle5">Servings:______ Prep Time:______</p>
+                            <p class="title 2">Recipe 5</p>
+                            <p class="subtitle5"></p>
                           </article>
                         </div>
                         <div id="parent5" class="tile is-parent preview">
                           <article class="tile is-child box cards">
-                            <p class="title">Recipe 6</p>
-                            <p class="subtitle6">Servings:______ Prep Time:______</p>
+                            <p class="title 2">Recipe 6</p>
+                            <p class="subtitle6"></p>
                             </div>
                           </article>
                     </div>
@@ -122,7 +123,7 @@
             <div class="tile is-ancestor">
                 <div class="tile is-4 is-vertical is-parent">
                   <div class="tile is-child box">
-                    <p class="title">Ingredients</p>
+                    <p class="title title-two">Ingredients</p>
                     <ul id="ingredientsList" class="ingredients-list">
                         <li> 1 cup </li>
                         <li> 2.5oz  </li>
@@ -133,7 +134,7 @@
                 </div>
                 <div class="tile is-parent">
                   <div class="tile is-child box">
-                    <p id="recipeLabel" class="title" >Recipe Title</p>
+                    <p id="recipeLabel" class="title title-two" >Recipe Title</p>
                     <hr>
                     <a href="" target="_blank" id="recipeLink" >See Full Recipe</a>
                     <br>
@@ -154,7 +155,7 @@
           </div>
           <br>
           <div class="foot">
-            <p>I customized the wicked cool background on my homepage at <a href="https://www.svgbackgrounds.com/">SVGBackgrounds.com.</a></p>
+            <p>Custom background by <a href="https://www.svgbackgrounds.com/">SVGBackgrounds.com.</a></p>
           </div>
           <br>
           <div class="foot">
