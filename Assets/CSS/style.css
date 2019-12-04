@@ -71,7 +71,9 @@ padding: 25px 25px;
     height: 50px;
     justify-content: space-between;
 }
-
+.cooktime{
+    color: black;
+}
 .currentTemp{
     color: white;
 }
